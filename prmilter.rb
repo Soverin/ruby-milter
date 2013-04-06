@@ -261,6 +261,8 @@ module PRMilter
 
     def start( host = 'localhost', port = 8888 )
       EM.run do
+        Signal.trap("INT")  { EventMachine.stop }
+        Signal.trap("TERM") { EventMachine.stop }
         EM.start_server host, port, MilterConnectionHandler
       end
     end
