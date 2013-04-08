@@ -6,11 +6,11 @@ require 'milter/version'
 Gem::Specification.new do |spec|
   spec.name          = "milter"
   spec.version       = Milter::VERSION
-  spec.authors       = ["Markus Strauss"]
+  spec.authors       = ["Hirohisa Mitsuishi", "cswilliams", "Markus Strauss"]
   spec.email         = ["Markus@ITstrauss.eu"]
   # spec.description   = %q{A pure Ruby Milter library}
   spec.summary       = %q{A pure Ruby Milter library}
-  spec.homepage      = "https://github.com/mstrauss/ruby-milter.git"
+  spec.homepage      = "https://github.com/mstrauss/ruby-milter"
   # spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
