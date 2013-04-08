@@ -1,8 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + "/../prmilter")
+require 'milter'
 
 # example
 # change mail body
-class MyMilter < PRMilter::Milter
+class MyMilter < Milter::Milter
   def header( k,v )
     puts "#{k} => #{v}"
     return Response.continue
@@ -14,5 +14,5 @@ class MyMilter < PRMilter::Milter
   end
 end
 
-PRMilter.register(MyMilter)
-PRMilter.start
+Milter.register(MyMilter)
+Milter.start

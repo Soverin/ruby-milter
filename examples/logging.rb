@@ -1,6 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + "/../prmilter")
+require 'milter'
 
-class MyMilter < PRMilter::Milter
+class MyMilter < Milter::Milter
 
   def connect( hostname, family, port, address )
     puts "connect from #{address}:#{port} (#{hostname})."
@@ -60,11 +60,11 @@ class MyMilter < PRMilter::Milter
   end
 
   def macro( cmd, data )
-    puts "#{PRMilter::COMMANDS[cmd]} macros: #{data.inspect}"
+    puts "#{Milter::COMMANDS[cmd]} macros: #{data.inspect}"
     return Response.continue
   end
 
 end
 
-PRMilter.register(MyMilter)
-PRMilter.start
+Milter.register(MyMilter)
+Milter.start

@@ -1,9 +1,7 @@
-require 'rubygems'
+require 'milter/version'
 require 'eventmachine'
 
-# The defintions in this module come from sendmail's include/libmilter/mfdef.h, v 8.38 2007/03/27 18:53:48
-module PRMilter
-
+module Milter
   SMFI_PROT_VERSION = 6  # "MTA - libmilter protocol version"
   MILTER_LEN_BYTES  = 4  # "length of 32 bit integer in bytes"
 
