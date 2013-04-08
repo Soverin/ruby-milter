@@ -324,6 +324,7 @@ module Milter
         Signal.trap("INT")  { EventMachine.stop }
         Signal.trap("TERM") { EventMachine.stop }
         EM.start_server host, port, MilterConnectionHandler
+        puts "Server started on #{host}:#{port}."
       end
     end
   end
