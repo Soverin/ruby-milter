@@ -151,6 +151,10 @@ module Milter
           RESPONSE[:accept]
         end
 
+        def tempfail
+          RESPONSE[:tempfail]
+        end
+
         #email must be enclosed in <>
         def delete_rcpt( email )
           RESPONSE[:delrcpt] + email + "\0"
