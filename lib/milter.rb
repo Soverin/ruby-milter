@@ -109,7 +109,8 @@ module Milter
   class Milter
     def initialize
       @body = ''
-      @headers = {}
+      # order of headers must be maintained (e.g. for 'received' headers), so we use an array
+      @headers = []
       @recipients = []
     end
 
@@ -127,8 +128,7 @@ module Milter
     end
 
     def header( k,v )
-      @headers[k] = [] if @headers[k].nil?
-      @headers[k] <<  v
+      @headers << "#{k}: #{v}"
       return Response.continue
     end
 

@@ -34,9 +34,7 @@ class MyMilter < Milter::Milter
 
   def header( k, v )
     puts "header: #{k} => #{v}"
-    @headers[k] = [] if @headers[k].nil?
-    @headers[k] <<  v
-    return Response.continue
+    super(k,v)
   end
 
   def end_headers
